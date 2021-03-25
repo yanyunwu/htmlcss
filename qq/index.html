@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="src/Snipaste_2021-03-14_21-55-38.png">
+    <title>登录QQ邮箱</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .header {
+            width: 100%;
+            height: 62px;
+            border-bottom: 1px solid #d6dfea;
+            background-color: #eff4fa;
+        }
+
+        .logo {
+            width: 182px;
+            height: 62px;
+            line-height: 62px;
+            margin-left: 40px;
+            float: left;
+        }
+
+        .logo a {
+            display: inline-block;
+            width: 182px;
+            height: 34px;
+            background-image: url("src/logo.png");
+            margin: 14px 0;
+        }
+
+        .nav {
+            height: 62px;
+            padding-right: 40px;
+            text-align: right;
+            line-height: 60px;
+            margin-left: 222px;
+            color: #b6bcce;
+        }
+
+        .nav a {
+            font-style: normal;
+            font-weight: normal;
+            font-size: 12px;
+            font-family: "Microsoft YaHei";
+            color: #1d5494;
+        }
+
+        .nav a:hover {
+            font-style: normal;
+            font-weight: normal;
+            font-size: 12px;
+            font-family: "Microsoft YaHei";
+            color: #1d5494;
+            text-decoration: underline;
+        }
+
+        .content {
+            width: 951px;
+            height: 389px;
+            margin: 0 auto;
+            margin-top: 32px;
+            padding-top: 40px;
+
+        }
+
+        .content_left {
+            width: 520px;
+            height: 400px;
+            margin: 0;
+            padding: 0;
+            background-image: url("src/content_left2.png");
+            background-repeat: no-repeat;
+            background-position: right center;
+
+        }
+
+        .content_left>div {
+            width: 520px;
+            height: 201px;
+            padding-top: 35px;
+        }
+
+        .content_left p {
+            width: 520px;
+            height: 24px;
+            font-size: 14px;
+        }
+
+        .content_left div .first_p {
+            width: 520px;
+            height: 26px;
+            margin: 15px 0;
+            font-size: 24px;
+            font-weight: normal;
+            color: #6f95c8;
+        }
+
+        .content_right {
+            float: right;
+            width: 334px;
+            height: 387px;
+            border: 1px solid #a0b1c4;
+            border-radius: 5px;
+            text-align: center;
+
+
+        }
+
+        .h {
+            float: left;
+            width: 167px;
+            height: 50px;
+            font: normal normal 16px/50px "Microsoft YaHei";
+            text-align: center;
+            border-bottom: 1px solid #a0b1c4;
+            color: #999999;
+        }
+
+        .h2 {
+            color: #333333;
+        }
+
+        .b {
+            height: 336px;
+            width: 334px;
+            overflow: hidden;
+            margin-top: 51px;
+        }
+
+        .ball {
+            width: 282px;
+            height: 38px;
+            margin: 0 auto;
+            border: 1px solid #a0b1c4;
+        }
+
+        .b1 {
+            margin-top: 36px;
+
+        }
+
+        .b2 {
+            margin-top: 10px;
+
+        }
+
+        .b1 input,
+        .b2 input {
+            width: 232px;
+            /* height: 38px; */
+            border: none;
+            padding: 10px 40px 10px 10px;
+            border-radius: 3px;
+            font-size: 16px;
+
+        }
+
+        .b1 input:focus,
+        .b2 input:focus {
+            width: 232px;
+            border: none;
+            padding: 10px 40px 10px 10px;
+            border-radius: 3px;
+            font-size: 16px;
+            outline: 0;
+        }
+
+        .b1 input::placeholder,
+        .b2 input::placeholder {
+            font-size: 14px;
+            color: #aaaaaa;
+        }
+
+        .b3 {
+            width: 95px;
+            height: 18px;
+            margin-left: 25px;
+            margin-top: 24px;
+
+        }
+
+        .b3 #b3_1 {
+            display: inline-block;
+            height: 16px;
+            width: 16px;
+            border: 1px solid #96a5b4;
+        }
+
+        .b3 #b3_2 {
+            height: 18px;
+            display: inline-block;
+            font-size: 10px;
+            line-height: 18px;
+            overflow: hidden;
+        }
+
+        .login {
+            width: 282px;
+            height: 40px;
+            background-color: #5a98de;
+            margin: 0 auto;
+            margin-top: 16px;
+            color: #fff;
+            line-height: 39px;
+            text-align: center;
+            border-radius: 3px;
+            font-style: 18px;
+            letter-spacing: 3px;
+            word-spacing: normal;
+        }
+
+        .b>a {
+            display: inline-block;
+            height: 20px;
+            width: auto;
+            margin-top: 21px;
+        }
+
+        .b>a #a_1 {
+            display: inline-block;
+            width: 16px;
+            height: 16px;
+            margin: 2px 0;
+            background: url("src/last.png");
+            background-size: cover;
+        }
+
+        .b>a #a_2 {
+            display: inline-block;
+            height: 16px;
+            margin: 2px 0;
+            font-size: 12px;
+            width: 100px;
+            line-height: 16px;
+            overflow: hidden;
+        }
+
+        .b>a:visited {
+            display: inline-block;
+            height: 16px;
+            width: auto;
+            margin-top: 21px;
+            color: #225592;
+        }
+
+        .bottom {
+            width: 282px;
+            height: 16px;
+            margin: 0 auto;
+            margin-top: 40px;
+            font-size: 13px;
+        }
+
+        .bottom #bot_1 {
+            float: left;
+        }
+
+        .bottom #bot_2 {
+            float: right;
+        }
+
+        .bottom #bot_1:visited,
+        .bottom #bot_2:visited {
+            color: #225592;
+        }
+
+        .footer {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            height: 36px;
+            line-height: 36px;
+            background-color: #eff4fa;
+            text-align: center;
+            border-top: 1px solid #d6dfea;
+            border-bottom: 1px solid #d6dfea;
+            font-size: 12px;
+            color: #1d5494;
+
+        }
+
+        .footer a {
+            color: #1d5494;
+        }
+
+        .footer span {
+            color: #868686;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <div class="logo">
+            <a href="#"></a>
+        </div>
+        <div class="nav">
+            <a href="#">基本版</a> |
+            <a href="#">English</a> |
+            <a href="#">手机版</a> |
+            <a href="#">企业邮箱</a>
+        </div>
+    </div>
+
+    <div class="content">
+        <div class="content_right">
+            <div class="h">微信登录</div>
+            <div class="h h2">QQ登录</div>
+            <div class="b">
+                <div class="ball b1">
+                    <input type="text" placeholder="支持QQ号/手机号/邮箱/登录">
+                </div>
+                <div class="ball b2">
+                    <input type="text" placeholder="QQ密码">
+                </div>
+                <div class="b3">
+                    <div id="b3_1"></div>
+                    <div id="b3_2">下次自动登录</div>
+                </div>
+                <div class="login">登录</div>
+                <a href="#">
+                    <span id="a_1"></span>
+                    <span id="a_2">扫码自动登录</span>
+                </a>
+                <div class="bottom">
+                    <a href="#" id="bot_1">忘了密码?</a>
+                    <a href="#" id="bot_2">注册新账号</a>
+                </div>
+
+            </div>
+
+        </div>
+        <div class="content_left">
+            <div>
+                <p class="first_p">QQ邮箱，常联系！</p>
+                <p>2500年前，人们飞鸽传书</p>
+                <p>185年前，莫尔斯发明了电报</p>
+                <p>52年前，第一封电子邮件发出</p>
+                <p>今天，QQ邮箱联系你、我、他</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer"><a href="https://www.tencent.com" target="_blank">关于腾讯</a>&nbsp;|&nbsp;<a
+            href="https://mail.qq.com/cgi-bin/readtemplate?check=false&amp;t=mail_clause"
+            target="_blank">服务条款</a>&nbsp;|&nbsp;<a href="https://privacy.qq.com/"
+            target="_blank">隐私政策</a>&nbsp;|&nbsp;<a href="https://kf.qq.com/product/email.html"
+            target="_blank">客服中心</a>&nbsp;|&nbsp;<a href="https://mail.qq.com/zh_CN/contact_us.html"
+            target="_blank">联系我们</a>&nbsp;|&nbsp;<a href="https://service.mail.qq.com"
+            target="_blank">帮助中心</a>&nbsp;|&nbsp;<span class="gray">©1998 - 2021 Tencent Inc. All Rights
+            Reserved.</span>
+    </div>
+</body>
+
+</html>
